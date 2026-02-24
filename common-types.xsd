@@ -375,6 +375,66 @@
             </xs:documentation>
         </xs:annotation>
     </xs:element>
+    <xs:element name="language-of-instruction" type="xs:language">
+        <xs:annotation>
+            <xs:documentation>
+                An BCP 47 code of the language which has been used
+                as the primary language of teaching.
+
+                Language tags allow specifying languages and their variations.
+
+                Examples:
+                — `el` for Greek;
+                — `el-Latn` for Greek in the Latin script;
+                — `el-CY` for Cypriot Greek;
+                — `el-Latn-CY` for Cypriot Greek in the Latin script.
+
+                References:
+                — Current specification – https://www.rfc-editor.org/info/bcp47
+                — Language subtag registry – https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry
+            </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="last-modified" type="xs:dateTime">
+        <xs:annotation>
+            <xs:documentation>
+                Time of the last change to this object.
+            </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="learning-outcomes" type="MultilineStringWithOptionalLang">
+        <xs:annotation>
+            <xs:documentation>
+                Learning outcomes with optional language code.
+            </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="description" type="MultilineStringWithOptionalLang">
+        <xs:annotation>
+            <xs:documentation>
+                Description with an optional language code.
+
+                This field MAY be displayed to the user, but it might be better to refer the
+                user to a more "user-friendly" web page instead (the one given in the `url` – if defined).
+                The primary purpose of the description field is to provide
+                keywords for full-text searching. Server implementers are encouraged to provide
+                as many types of information as they like here, but this information should
+                still be divided in meaningful paragraphs and be human-readable.
+            </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="url" type="HTTPWithOptionalLang">
+        <xs:annotation>
+            <xs:documentation>
+                The URL of the web page with the description.
+
+                The `xml:lang` attribute, if given, SHOULD represent the language of this page.
+                Multiple URLs can be provided (with different `xml:lang` values). It is also
+                perfectly okay to provide a single URL that dynamically detects the viewer's
+                language preferences (in this case, no `xml:lang` attribute should be given).
+            </xs:documentation>
+        </xs:annotation>
+    </xs:element>
 
     <xs:element name="admin-email" type="Email">
         <xs:annotation>
